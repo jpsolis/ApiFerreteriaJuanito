@@ -26,18 +26,18 @@ namespace ApiFerreteriaJuanito.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> GetAllUsuarios()
         {
-            return Ok(await _context.Productos.ToListAsync());
+            return Ok(await _context.Usuarios.ToListAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
-            var prod = await _context.Usuarios.FindAsync(id);
-            if (prod == null)
+            var user = await _context.Usuarios.FindAsync(id);
+            if (user == null)
             {
-                return BadRequest("Producto no encontrado.");
+                return BadRequest("Usuario no encontrado.");
             }
-            return Ok(prod);
+            return Ok(user);
         }
 
         [HttpDelete("{id:int}")]

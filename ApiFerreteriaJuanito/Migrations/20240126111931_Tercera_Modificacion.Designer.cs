@@ -3,6 +3,7 @@ using System;
 using ApiFerreteriaJuanito.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiFerreteriaJuanito.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240126111931_Tercera_Modificacion")]
+    partial class Tercera_Modificacion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
@@ -80,13 +82,13 @@ namespace ApiFerreteriaJuanito.Migrations
             modelBuilder.Entity("ApiFerreteriaJuanito.Producto", b =>
                 {
                     b.HasOne("ApiFerreteriaJuanito.CarroCompras", null)
-                        .WithMany("listaProductos")
+                        .WithMany("productos")
                         .HasForeignKey("CarroComprasidCarro");
                 });
 
             modelBuilder.Entity("ApiFerreteriaJuanito.CarroCompras", b =>
                 {
-                    b.Navigation("listaProductos");
+                    b.Navigation("productos");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,5 +12,6 @@ namespace ApiFerreteriaJuanito.Data
         public DbSet<Producto> Productos => Set<Producto>();
 
         public DbSet<Usuario> Usuarios=> Set<Usuario>();
+        public DbSet<CarroCompras> CarroCompras => Set<CarroCompras>();
     }
 }
