@@ -1,7 +1,6 @@
 ﻿using ApiFerreteriaJuanito.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace ApiFerreteriaJuanito.Controllers
 {
