@@ -26,7 +26,7 @@ namespace ApiFerreteriaJuanito.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> GetAllUsuarios()
         {
-            return Ok(await _context.Productos.ToListAsync());
+            return Ok(await _context.Usuarios.ToListAsync());
         }
 
         [HttpGet("{id}")]
@@ -62,13 +62,12 @@ namespace ApiFerreteriaJuanito.Controllers
             try
             {
                 user.nombreUsuario = usuarioModelo.nombreUsuario is null ? user.nombreUsuario : usuarioModelo.nombreUsuario;
-                user.rangoUsuario = usuarioModelo.rangoUsuario is null ? user.rangoUsuario : usuarioModelo.rangoUsuario;
+                user.rolUsuario = usuarioModelo.rolUsuario is null ? user.rolUsuario : usuarioModelo.rolUsuario;
                 user.passUsuario = usuarioModelo.passUsuario is null ? user.passUsuario : usuarioModelo.passUsuario;
 
 
                 _context.Attach(user);
-
-                //_dbcontext.TabAgregados.Update(objeto);
+                
                 _context.Entry(user).State = EntityState.Modified;
                 _context.SaveChanges();
 
